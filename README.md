@@ -28,7 +28,7 @@ Bienvenue sur LokIP, l'outil idéal pour découvrir des informations détaillée
 
 ## 📸 Aperçu
 
-![LokIP Screenshot](screenshot.png)
+![LokIP Screenshot](png/01.png)
 
 ## 👤 Auteur
 
