@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LokIp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+    <header>
+        <div class="container">
+            <h1>🌐 LokIP</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">A propos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="container start-screen" id="start-screen">
+            <div class="intro-box">
+                <h2>🔍 Trouveur de Localisation IP</h2>
+                <p>Découvrez des informations détaillées sur une adresse IP. Entrez l'IP ci-dessous pour commencer.</p>
+                <div class="search-bar">
+                    <input type="text" id="ip-address" placeholder="Entrez l'IP..." />
+                    <button onclick="fetchIPInfo()">🔍</button>
+                </div>
+                <p id="error-message" class="error-message"></p>
+            </div>
+        </section>
+
+        <section class="container ip-details-screen" id="ip-details-screen" style="display: none;">
+            <h2>Recherche d'Adresse IP:</h2>
+            <div class="ip-info-container">
+                <div class="info-box">
+                    <p><strong>Adresse IP:</strong> <span id="ip-value"></span></p>
+                    <p><strong>Décimal:</strong> <span id="ip-decimal"></span></p>
+                    <p><strong>Nom d'hôte:</strong> <span id="ip-hostname"></span></p>
+                    <p><strong>ASN:</strong> <span id="ip-asn"></span></p>
+                    <p><strong>ISP:</strong> <span id="ip-isp"></span></p>
+                    <p><strong>Services:</strong> <span id="ip-services"></span></p>
+                    <p><strong>Pays:</strong> <span id="ip-country"></span></p>
+                    <p><strong>État/Région:</strong> <span id="ip-region"></span></p>
+                    <p><strong>Ville:</strong> <span id="ip-city"></span></p>
+                    <p><strong>Code Postal:</strong> <span id="ip-postal"></span></p>
+                    <p><strong>TimeZone:</strong> <span id="ip-timezone"></span></p>
+                    <p><strong>Langue:</strong> <span id="ip-languages"></span></p>
+                    <p><strong>Devise:</strong> <span id="ip-currency"></span></p>
+                    <p><strong>Nom de la devise:</strong> <span id="ip-currency_name"></span></p>
+                    <p><strong>Latitude:</strong> <span id="ip-latitude"></span></p>
+                    <p><strong>Longitude:</strong> <span id="ip-longitude"></span></p>
+                </div>
+                <div class="map-box">
+                    <div id="map"></div>
+                </div>
+            </div>
+            <button class="back-button" onclick="goBack()">🏠 Accueil</button>
+        </section>
+
+        <section id="faq" class="container faq-section">
+            <h2>❓ Questions Fréquemment Posées</h2>
+            <div class="faq-item">
+                <h3>Qu'est-ce qu'une Recherche IP ?</h3>
+                <p>La recherche d'une adresse IP peut fournir de nombreuses informations sur l'appareil et le réseau associés à cette adresse IP. Voici ce que vous pouvez découvrir en recherchant l'IP d'une personne.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Géolocalisation IP</h3>
+                <p>La recherche d'une adresse IP vous montre la géolocalisation de cette adresse IP, y compris le pays, l'état, la ville et le code postal.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Nom du Propriétaire de l'IP</h3>
+                <p>Une adresse IP ne révèle pas le nom ou l'identité de l'utilisateur. Cependant, elle peut être utilisée pour trouver leur nom (par exemple, dans les enquêtes légales).</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© Site web créé par Ethan</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
